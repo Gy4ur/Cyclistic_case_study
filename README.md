@@ -8,6 +8,8 @@ For the capstone project, I have selected the Cyclistic bike share analysis. In 
 - Data visualization using Tableau Public
 - Data-driven recommendation based on the analysed data
 
-Tableau link: **<a href="https://public.tableau.com/app/profile/gyaur/viz/Cyclistic_Case_Study_MR/Arrival_casual" rel="nofollow">Cyclistic Case Study Data Visualization</a>**
+Google Slides: **<a href="https://docs.google.com/presentation/d/1Uems7qN5bM769rDRo6sl-ueX1gyGXKq9wcm72zoElaI/edit?usp=sharing" rel="nofollow">Cyclistic Case Study Data Visualization</a>**
+
+Tableau link: **<a href="https://public.tableau.com/views/Cyclistic_case_study_16433762425800/Trips_by_month?:language=en-US&:display_count=n&:origin=viz_share_link" rel="nofollow">Cyclistic Case Study Data Visualization</a>**
 
 Raw Dataset Available from: **<a href="https://divvy-tripdata.s3.amazonaws.com/index.html" rel="nofollow">Cyclistic Bike Sharing Data</a>**
