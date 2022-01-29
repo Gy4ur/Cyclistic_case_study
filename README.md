@@ -6,7 +6,7 @@ For the capstone project, I have selected the Cyclistic bike share analysis. In 
 - Data cleaning and manipulation using SQL.
 - SQL code documentation available in GitHub.
 - Data visualization using Tableau Public
-- Data-driven recommendation baes on the analysed data
+- Data-driven recommendation based on the analysed data
 
 Tableau link: **<a href="https://public.tableau.com/app/profile/gyaur/viz/Cyclistic_Case_Study_MR/Arrival_casual" rel="nofollow">Cyclistic Case Study Data Visualization</a>**
 
