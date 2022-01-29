@@ -69,47 +69,47 @@ location_dataviz_depart AS
 	),
 ------------ Total numbers of member / casual riders arriving for respective stations ----------------
 casual_arrive_station AS
-(
-	SELECT COUNT(member_casual) AS Casual, end_station_name
-	FROM final_table
-	WHERE member_casual = 'casual' 
-	GROUP BY end_station_name
-),
+	(
+		SELECT COUNT(member_casual) AS Casual, end_station_name
+		FROM final_table
+		WHERE member_casual = 'casual' 
+		GROUP BY end_station_name
+	),
 
 member_arrive_station AS
-(
-	SELECT COUNT(member_casual) AS Member, end_station_name
-	FROM final_table
-	WHERE member_casual = 'member' 
-	GROUP BY end_station_name
-),
+	(
+		SELECT COUNT(member_casual) AS Member, end_station_name
+		FROM final_table
+		WHERE member_casual = 'member' 
+		GROUP BY end_station_name
+	),
 
 --------- Join member and casual riders on arriving bike stations ------------------------------------
 arrive_station AS
-(
-	SELECT cas.end_station_name, cas.Casual, mas.Member
-	FROM casual_arrive_station cas
-	  JOIN member_arrive_station mas
-	  ON cas.end_station_name = mas.end_station_name
-),
+	(
+		SELECT cas.end_station_name, cas.Casual, mas.Member
+		FROM casual_arrive_station cas
+		  JOIN member_arrive_station mas
+		  ON cas.end_station_name = mas.end_station_name
+	),
 
 ----------- Group arriving station name with distinct Latitude and Altitude -----------------------
 arrive_latlng AS
-(
-	SELECT DISTINCT end_station_name, ROUND(AVG(end_lat),4) AS arr_lat, Round(AVG(end_lng),4) AS arr_lng
-	FROM final_table
-	GROUP BY end_station_name
-),
+	(
+		SELECT DISTINCT end_station_name, ROUND(AVG(end_lat),4) AS arr_lat, Round(AVG(end_lng),4) AS arr_lng
+		FROM final_table
+		GROUP BY end_station_name
+	),
 
 ---------- Join location  data with ridership count ------------------------
 ---------- Export to excel and import to tableau for visualisation-----------------------
 location_dataviz_arrive AS
-(
-	SELECT al.end_station_name, ast.Casual, ast.Member, al.arr_lat, al.arr_lng
-	FROM arrive_station ast
-	  JOIN arrive_latlng al
-	  ON ast.end_station_name = al.end_station_name
-),
+	(
+		SELECT al.end_station_name, ast.Casual, ast.Member, al.arr_lat, al.arr_lng
+		FROM arrive_station ast
+		  JOIN arrive_latlng al
+		  ON ast.end_station_name = al.end_station_name
+	),
 
 ----Summary stats-----
 
